@@ -1,6 +1,6 @@
 package com.axiagroups.jettrivia.data.remote
 
-import com.axiagroups.jettrivia.data.remote.dto.QuestionDto
+import com.axiagroups.jettrivia.domain.model.Question
 import retrofit2.http.GET
 
 
@@ -10,5 +10,5 @@ import retrofit2.http.GET
  */
 interface QuestionsApi {
     @GET("world.json")
-    suspend fun getAllQuestions(): QuestionDto
+    suspend fun getAllQuestions(): Question
 }

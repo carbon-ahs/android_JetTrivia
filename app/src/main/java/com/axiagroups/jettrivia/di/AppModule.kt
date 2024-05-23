@@ -3,6 +3,7 @@ package com.axiagroups.jettrivia.di
 import com.axiagroups.jettrivia.data.remote.MyApi
 import com.axiagroups.jettrivia.data.remote.QuestionsApi
 import com.axiagroups.jettrivia.data.repository.MyRepositoryImpl
+import com.axiagroups.jettrivia.data.repository.QuestionRepository
 import com.axiagroups.jettrivia.di.diUtil.Constants
 import com.axiagroups.jettrivia.domain.repository.MyRepository
 import dagger.Module
@@ -36,6 +37,11 @@ object AppModule {
     fun provideMyRepository(api: MyApi) : MyRepository {
         return MyRepositoryImpl(api)
     }
+
+    @Provides
+    @Singleton
+    fun provideQuestionRepository(api: QuestionsApi) =
+            QuestionRepository(api)
 
     @Provides
     @Singleton
